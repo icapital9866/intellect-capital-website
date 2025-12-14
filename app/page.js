@@ -1,126 +1,83 @@
 import Link from 'next/link';
 
-export default function Page() {
+export default function Home() {
   return (
-    <>
-      <section className="hero">
-        <div className="container heroGrid">
-          <div className="card cardPad">
-            <div className="kicker">Consulting • Staffing • Training</div>
-            <h1 className="hTitle">Intellect Capital LLC</h1>
-            <p className="hSub">
-              We deliver high-quality talent and project support across <b>Information Technology</b>, <b>Engineering</b>, and <b>Healthcare</b>.
-              From staff augmentation to training-led deployments, we help clients execute faster with confidence.
-            </p>
-            <div style={{display:'flex', gap:10, flexWrap:'wrap'}}>
-              <Link className="btn" href="/contact/">Request a Consultation</Link>
-              <Link className="badge" href="/careers/">Explore Careers</Link>
-              <Link className="badge" href="/training/">Training Programs</Link>
-            </div>
-
-            <div className="pills">
-              <span className="pill">Fast Turnaround</span>
-              <span className="pill">Vetted Candidates</span>
-              <span className="pill">Client-Focused Delivery</span>
-              <span className="pill">Compliance Mindset</span>
-            </div>
-          </div>
-
-          <div className="card cardPad">
-            <div className="kicker">Service Lines</div>
-            <div className="h2">What we do</div>
-            <div className="small" style={{marginBottom:12}}>
-              Choose a service area to learn more about capabilities, roles, and engagement models.
-            </div>
-            <div style={{display:'grid', gap:10}}>
-              <Link className="badge" href="/services/it/">IT Services →</Link>
-              <Link className="badge" href="/services/engineering/">Engineering →</Link>
-              <Link className="badge" href="/services/healthcare/">Healthcare →</Link>
-              <Link className="badge" href="/services/">All Services →</Link>
-            </div>
-          </div>
+    <div className="flex min-h-screen bg-white">
+      {/* Sidebar */}
+      <aside className="w-64 bg-gray-100 border-r border-gray-300 p-6">
+        <h1 className="text-2xl font-bold text-gray-900 mb-8">
+          Intellect Capital LLC
+        </h1>
+        <nav className="space-y-2">
+          <a href="#engineering" className="block py-2 px-4 text-gray-700 hover:bg-gray-200 rounded">Engineering</a>
+          <a href="#it" className="block py-2 px-4 text-gray-700 hover:bg-gray-200 rounded">IT Services</a>
+          <a href="#healthcare" className="block py-2 px-4 text-gray-700 hover:bg-gray-200 rounded">Healthcare</a>
+          <a href="#about" className="block py-2 px-4 text-gray-700 hover:bg-gray-200 rounded">About</a>
+          <a href="#contact" className="block py-2 px-4 text-gray-700 hover:bg-gray-200 rounded">Contact</a>
+        </nav>
+        <div className="mt-12 text-sm text-gray-600">
+          <p>701 S Carroll Blvd Ste 206</p>
+          <p>Denton, TX 76201</p>
+          <p className="mt-2">469-579-0881</p>
+          <p>hr@intellectcapital.us</p>
         </div>
-      </section>
+      </aside>
 
-      <section className="section">
-        <div className="container">
-          <div className="grid3">
-            <div className="card cardPad">
-              <div className="kicker">IT</div>
-              <div className="h3">Modern IT delivery</div>
-              <ul className="list">
-                <li>Data Engineering & Analytics</li>
-                <li>Cloud (AWS/Azure)</li>
-                <li>Application Development</li>
-                <li>QA Automation & DevOps</li>
-              </ul>
-              <div style={{marginTop:12}}><Link className="badge" href="/services/it/">View IT services</Link></div>
-            </div>
+      {/* Main Content */}
+      <main className="flex-1 p-12">
+        <section id="engineering" className="mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Engineering</h2>
+          <ul className="space-y-3 text-gray-700">
+            <li>• ADAS - Advanced Driver Assistance Systems</li>
+            <li>• Infotainment Systems</li>
+            <li>• Hardware-in-Loop (HIL) Testing</li>
+            <li>• AUTOSAR Development</li>
+            <li>• Functional Safety (ISO 26262)</li>
+            <li>• Embedded Technologies</li>
+            <li>• Testing & Validation</li>
+          </ul>
+        </section>
 
-            <div className="card cardPad">
-              <div className="kicker">Engineering</div>
-              <div className="h3">Embedded & Automotive</div>
-              <ul className="list">
-                <li>ADAS, Infotainment</li>
-                <li>HIL, AUTOSAR</li>
-                <li>Functional Safety</li>
-                <li>Testing & Validation</li>
-              </ul>
-              <div style={{marginTop:12}}><Link className="badge" href="/services/engineering/">View engineering</Link></div>
-            </div>
+        <section id="it" className="mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Information Technology</h2>
+          <ul className="space-y-3 text-gray-700">
+            <li>• Java Development</li>
+            <li>• .NET Solutions</li>
+            <li>• Mobile & Hybrid Technologies</li>
+            <li>• Cloud & DevOps</li>
+            <li>• Data Engineering</li>
+            <li>• QA Automation</li>
+          </ul>
+        </section>
 
-            <div className="card cardPad">
-              <div className="kicker">Healthcare</div>
-              <div className="h3">Healthcare support</div>
-              <ul className="list">
-                <li>Healthcare IT & Data</li>
-                <li>Operations & Support roles</li>
-                <li>Compliance-aware staffing</li>
-                <li>Flexible engagement models</li>
-              </ul>
-              <div style={{marginTop:12}}><Link className="badge" href="/services/healthcare/">View healthcare</Link></div>
-            </div>
-          </div>
-        </div>
-      </section>
+        <section id="healthcare" className="mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Healthcare</h2>
+          <ul className="space-y-3 text-gray-700">
+            <li>• Healthcare IT Systems</li>
+            <li>• Claims & Billing Data</li>
+            <li>• Clinical Analytics</li>
+            <li>• Compliance & Security (HIPAA)</li>
+            <li>• Reporting & Business Intelligence</li>
+          </ul>
+        </section>
 
-      <section className="section">
-        <div className="container">
-          <div className="card cardPad">
-            <div className="kicker">How we work</div>
-            <div className="h2">A simple delivery model</div>
-            <table className="table" aria-label="delivery model">
-              <thead>
-                <tr>
-                  <th>Step</th>
-                  <th>What happens</th>
-                  <th>Outcome</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><span className="badge">1</span></td>
-                  <td>We understand your requirement, timeline, and environment.</td>
-                  <td>Clear scope + role alignment</td>
-                </tr>
-                <tr>
-                  <td><span className="badge">2</span></td>
-                  <td>We source, screen, and (when needed) train candidates for readiness.</td>
-                  <td>Vetted shortlist</td>
-                </tr>
-                <tr>
-                  <td><span className="badge">3</span></td>
-                  <td>We deploy and support with ongoing communication and performance focus.</td>
-                  <td>Reliable execution</td>
-                </tr>
-              </tbody>
-            </table>
-            <div style={{marginTop:14}}>
-              <Link className="btn" href="/contact/">Talk to us</Link>
-            </div>
-          </div>
-        </div>
-      </section>
-    </>
+        <section id="about" className="mb-16">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">About Us</h2>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Intellect Capital LLC provides specialized consulting services across Engineering, IT, and Healthcare domains. 
+            Our team combines deep technical expertise with industry knowledge to deliver solutions that drive measurable results.
+          </p>
+        </section>
+
+        <section id="contact">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Contact</h2>
+          <p className="text-gray-700">
+            <strong>Address:</strong> 701 S Carroll Blvd Ste 206, Denton, TX 76201<br/>
+            <strong>Phone:</strong> 469-579-0881<br/>
+            <strong>Email:</strong> hr@intellectcapital.us
+          </p>
+        </section>
+      </main>
+    </div>
   );
 }
